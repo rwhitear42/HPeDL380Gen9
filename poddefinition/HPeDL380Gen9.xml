@@ -1,0 +1,11 @@
+<pod-definition code="-1" type="HPeDL380Gen9" label="HPeDL380Gen9">
+	<pod-element category="1" name="Cisco UCS" code="-1" count="1" account-types="11">
+		<device-model vendor="[cC]isco" version=".*" model="UCSM" />
+	</pod-element>
+	<pod-element category="3" name="NXOS" count="6" code="81" account-types="nxos">
+		<device-model vendor="[cC]isco" version=".*" model="Nexus[\s]*[157].*" />
+	</pod-element>
+	<pod-element category="2" count="2" code="77" account-types="HPeDL380Gen9">
+<device-model vendor="[hH]PeDL380Gen9" version=".*" model="FAS.*|.*Cluster.*|.*OnCommand.*|.*DFM.*" />
+	</pod-element>
+</pod-definition>
