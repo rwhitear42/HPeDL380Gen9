@@ -2,6 +2,7 @@ package com.cloupia.feature.HPeDL380Gen9;
 
 import org.apache.log4j.Logger;
 
+import com.cloupia.feature.HPeDL380Gen9.tasks.HPeDL380Gen9GetNetworkInfoTask;
 import com.cloupia.service.cIM.inframgr.AbstractCloupiaModule;
 import com.cloupia.service.cIM.inframgr.AbstractTask;
 import com.cloupia.service.cIM.inframgr.CustomFeatureRegistry;
@@ -27,8 +28,26 @@ public class HPeDL380Gen9Module extends AbstractCloupiaModule {
 
 	@Override
 	public AbstractTask[] getTasks() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		logger.info("Adding tasks");
+
+		try {
+
+			final AbstractTask[] task = new AbstractTask[] { 
+				new HPeDL380Gen9GetNetworkInfoTask(), 
+			};
+			
+			return task;
+			
+		} catch (Exception e) {
+
+			logger.error(e.getMessage());
+
+			logger.error(e.getStackTrace());
+
+			return null;
+		}
+		
 	}
 
 	@Override
